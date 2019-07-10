@@ -9,7 +9,7 @@ SECRET_KEY = 'your_secret_key'
 HEADERS = {
     'Content-Type': 'application/json',
     'X-Dispatch-Key': 'your_public_key',
-    'RecordType': 'job' # indicate what type of record you are sending over here
+    'RecordType': 'job' # The would be `organization`, `user` etc. (any identify value is acceptable) depending on what you're trying to send over. Refer to the playbook
 }
 
 # The payload here can be any valid structure representing the data as comig out of your system

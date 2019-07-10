@@ -4,13 +4,15 @@ import hmac
 import hashlib
 import gzip
 
-ENV = '-sbx'
+ENV = '-sbx'    # for production you can just set this to '' i.e. production API https://api.dispatch.me
 SECRET_KEY = 'your_secret_key'
 HEADERS = {
     'Content-Type': 'application/json',
     'X-Dispatch-Key': 'your_public_key'
 }
 
+# The `record_type` would be `organization`, `user` depending on what you're trying to send over. Refer to the playbook
+# This external ID fields reference the IDs unique in your system
 PAYLOAD = r"""
 [
     {

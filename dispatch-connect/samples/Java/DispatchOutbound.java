@@ -23,7 +23,7 @@ public class DispatchOutbound {
             byte[] bMaxMessages = maxMessages.getBytes(java.nio.charset.StandardCharsets.UTF_8);
             byte[] bSecretKey = ConvertHexStringToByteArray(SecretKey);
 
-            HttpURLConnection AgentOutEndPoint = (HttpURLConnection) new URL("https://connect-sbx.dispatch.me/agent/out").openConnection();
+            HttpURLConnection AgentOutEndPoint = (HttpURLConnection) new URL("https://connect-sbx.dispatch.me/agent/out").openConnection();  // the production API is https://connect.dispatch.me
             AgentOutEndPoint.setRequestMethod("POST");
             AgentOutEndPoint.setRequestProperty("Content-Type", "application/json");
             AgentOutEndPoint.setRequestProperty("X-Dispatch-Key", PublicKey);

@@ -30,11 +30,11 @@ public class DispatchInbound {
             byte[] bSecretKey = ConvertHexStringToByteArray(SecretKey);
             String XDispatchSignature = GetSignatureHash(bSecretKey, gZipPayload);
 
-            URL url = new URL("https://connect-sbx.dispatch.me/agent/in");
+            URL url = new URL("https://connect-sbx.dispatch.me/agent/in");    // the production API is https://connect.dispatch.me
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-Type", "application/json");
-            con.setRequestProperty("RecordType", "job"); // indicate what type of record you are sending over here
+            con.setRequestProperty("RecordType", "job");               // The would be `organization`, `user` etc. (any identify value is acceptable) depending on what you're trying to send over. Refer to the playbook
             con.setRequestProperty("X-Dispatch-Key", PublicKey);
             con.setRequestProperty("X-Dispatch-Signature", XDispatchSignature);
             con.setDoOutput(true);

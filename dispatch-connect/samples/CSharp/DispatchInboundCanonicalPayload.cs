@@ -18,15 +18,15 @@ namespace DispatchConnect
             string payload = @"[" +
                     "{" +
                         "\"header\":{" +
-                            "\"record_type\": \"job\"," +
+                            "\"record_type\": \"job\"," +  // The `record_type` would be `organization`, `user` depending on what you're trying to send over. Refer to the playbook
                             "\"version\": \"v3\"" +
                         "}," +
                         "\"record\":{" +
-                            "\"external_organization_id\": \"dispatchme\"," +
+                            "\"external_organization_id\": \"dispatchme\"," +    // This would reference the ID unique in your system
                             "\"title\": \"some title\"," +
                             "\"status\": \"offered\"," +
                             "\"description\": \"some description\"," +
-                            "\"external_ids\": [\"your_external_id\"]," +
+                            "\"external_ids\": [\"your_external_id\"]," +        // This would reference the ID unique in your system
                             "\"address\":{" +
                                 "\"postal_code\": \"01235\"," +
                                 "\"city\": \"Boston\"," +
@@ -65,7 +65,7 @@ namespace DispatchConnect
             byte[] gZipPayload = Compress(bPayload);
             byte[] bSecretyKey = ConvertHexStringToByteArray(SecretKey);
             string XDispatchSignature = GetSignatureHash(bSecretyKey, gZipPayload);
-            HttpWebRequest WR = (HttpWebRequest)HttpWebRequest.Create("https://connect-sbx.dispatch.me/agent/in");
+            HttpWebRequest WR = (HttpWebRequest)HttpWebRequest.Create("https://connect-sbx.dispatch.me/agent/in");   // the production API is https://connect.dispatch.me
             WR.Method = "POST";
             WR.Headers.Add("X-Dispatch-Signature", XDispatchSignature);
             WR.Headers.Add("X-Dispatch-Key", PublicKey);

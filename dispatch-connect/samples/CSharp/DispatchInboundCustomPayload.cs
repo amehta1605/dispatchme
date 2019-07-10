@@ -26,10 +26,10 @@ namespace DispatchConnect
             byte[] gZipPayload = Compress(bPayload);
             byte[] bSecretyKey = ConvertHexStringToByteArray(SecretKey);
             string XDispatchSignature = GetSignatureHash(bSecretyKey, gZipPayload);
-            HttpWebRequest WR = (HttpWebRequest)HttpWebRequest.Create("https://connect-sbx.dispatch.me/agent/in");
+            HttpWebRequest WR = (HttpWebRequest)HttpWebRequest.Create("https://connect-sbx.dispatch.me/agent/in");   // the production API is https://connect.dispatch.me
             WR.Method = "POST";
             WR.Headers.Add("X-Dispatch-Signature", XDispatchSignature);
-            WR.Headers.Add("RecordType", "job"); // indicate what type of record you are sending over here
+            WR.Headers.Add("RecordType", "job");             // The would be `organization`, `user` etc. (any identify value is acceptable) depending on what you're trying to send over. Refer to the playbook
             WR.Headers.Add("X-Dispatch-Key", PublicKey);
             WR.ContentType = "application/json";
             Stream stream = WR.GetRequestStream();

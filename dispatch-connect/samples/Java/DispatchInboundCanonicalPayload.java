@@ -16,15 +16,15 @@ public class DispatchInbound {
             String Payload =
                     "[{" +
                             "\"header\":{" +
-                                "\"record_type\": \"job\"," +
+                                "\"record_type\": \"job\"," +      // The `record_type` would be `organization`, `user` depending on what you're trying to send over. Refer to the playbook
                                 "\"version\": \"v3\"" +
                             "}," +
                             "\"record\":{" +
-                                "\"external_organization_id\": \"dispatchme\"," +
+                                "\"external_organization_id\": \"dispatchme\"," +   // This would reference the ID unique in your system
                                 "\"title\": \"some title\"," +
                                 "\"status\": \"offered\"," +
                                 "\"description\": \"some description\"," +
-                                "\"external_ids\": [\"12_03_03\"]," +
+                                "\"external_ids\": [\"12_03_03\"]," +              // This would reference the ID unique in your system
                                 "\"address\":{" +
                                     "\"postal_code\": \"01235\"," +
                                     "\"city\": \"Boston\"," +
@@ -36,7 +36,7 @@ public class DispatchInbound {
                                 "\"customer\": {" +
                                     "\"first_name\": \"Jason\"," +
                                     "\"last_name\": \"Davis\"," +
-                                    "\"external_id\": \"11_22_01\"," +
+                                    "\"external_id\": \"11_22_01\"," +               // This would reference the ID unique in your system
                                     "\"email\": \"devs+jasondavis@dispatch.me\"," +
                                     "\"home_address\": {" +
                                     "\"street_1\": \"71601 Ford Street\"," +
@@ -67,7 +67,7 @@ public class DispatchInbound {
             byte[] bSecretKey = ConvertHexStringToByteArray(SecretKey);
             String XDispatchSignature = GetSignatureHash(bSecretKey, gZipPayload);
 
-            URL url = new URL("https://connect-sbx.dispatch.me/agent/in");
+            URL url = new URL("https://connect-sbx.dispatch.me/agent/in");  // the production API is https://connect.dispatch.me
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-Type", "application/json");

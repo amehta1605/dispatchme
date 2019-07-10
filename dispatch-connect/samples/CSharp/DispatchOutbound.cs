@@ -110,7 +110,7 @@ namespace DispatchConnect
             int numRecs = 0;
             byte[] bMaxMessages = Encoding.UTF8.GetBytes(maxMessages);
             byte[] mysecretyKey = ConvertHexStringToByteArray(SecretKey);
-            HttpWebRequest AgentOutEndPoint = (HttpWebRequest)HttpWebRequest.Create("https://connect-sbx.dispatch.me/agent/out");
+            HttpWebRequest AgentOutEndPoint = (HttpWebRequest)HttpWebRequest.Create("https://connect-sbx.dispatch.me/agent/out");   // the production API is https://connect.dispatch.me
             AgentOutEndPoint.Method = "POST";
             AgentOutEndPoint.Headers.Add("X-Dispatch-Key", PublicKey);
             AgentOutEndPoint.ContentType = "application/json";
