@@ -21,7 +21,7 @@ PAYLOAD = r"""
             "version": "v3"
         },
         "record":{
-            "external_ids": ["dispatchme_1019_1"],
+            "external_id": "dispatchme_1019_1",
             "external_organization_id": "dispatchme",
             "title": "Priority: TEST Dispatch TEST - Standard | Model Name: 24\" UNDERCOUNTER REFRIGERATOR, RIGHT HINGE",
             "description": "**Product Serial Number:** 2464376\n\n**Product Model Number:** UC-24R-RH\n\n**Product Model Name:** 24\" UNDERCOUNTER REFRIGERATOR, RIGHT HINGE\n\n**Problem Description:** THIS IS A DM TEST.\n\n**KB Article:** https://km.acme.com/advisor/showcase?project=ACME&case=K29130342\n\n**Special Authorization:** http://service.acme.com/specialauthentry/createinternal/?ticketnumber=004-00-9004007\n\n**Unit History:** http://service.acme.com/Tools/UnitHistory?SerialNumber=2464376\n\n**Product Full Warranty:** 2019-06-05\n\n**Product Parts Warranty**: 2029-06-05\n\n**Product SS Warranty**: 2022-06-05\n\n**ASKO Article Number**: \n\n**Installer**: \n\n**ACME Ticket ID**: test-ud-13012\n\n",

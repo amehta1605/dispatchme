@@ -26,7 +26,7 @@ namespace DispatchConnect
                             "\"title\": \"some title\"," +
                             "\"status\": \"offered\"," +
                             "\"description\": \"some description\"," +
-                            "\"external_ids\": [\"your_external_id\"]," +        // This would reference the ID unique in your system
+                            "\"external_id\": \"your_external_id\"," +        // This would reference the ID unique in your system
                             "\"address\":{" +
                                 "\"postal_code\": \"01235\"," +
                                 "\"city\": \"Boston\"," +

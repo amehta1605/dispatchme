@@ -24,7 +24,7 @@ public class DispatchInbound {
                                 "\"title\": \"some title\"," +
                                 "\"status\": \"offered\"," +
                                 "\"description\": \"some description\"," +
-                                "\"external_ids\": [\"12_03_03\"]," +              // This would reference the ID unique in your system
+                                "\"external_id\": \"12_03_03\"," +              // This would reference the ID unique in your system
                                 "\"address\":{" +
                                     "\"postal_code\": \"01235\"," +
                                     "\"city\": \"Boston\"," +
