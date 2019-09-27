@@ -32,7 +32,7 @@ payload = r"""
             "source": "web",
             "status": "offered",
             "description": "some description",
-            "external_id": "some_unique_id",
+            "external_id": "some_unique_job_id",
             "address":{
                 "postal_code": "01235",
                 "city": "Boston",

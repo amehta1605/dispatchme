@@ -3,7 +3,7 @@ Please use this file for generating test data. This simulates receiving data fro
 * `secret_key` - you will need to get this from Dispatch
 * `external_organization_id` - set this to the name you were provided
 * `title` - can be anything but you may want to give a distinctive name so you can see it on the front end
-* `"external_ids": ["some_unique_id"]` - this is used for upsert logic so be sure to increment each time you want to create a new job (this would correlate to the brand's unique ID)
+* `"external_id": "some_unique_job_id"` - this is used for upsert logic so be sure to increment each time you want to create a new job (this would correlate to the brand's unique ID)
 * `"external_id": "some_unique_customer_id"` - somewhat optional. Each customer you create a new customer this should have a unique ID
 
 
