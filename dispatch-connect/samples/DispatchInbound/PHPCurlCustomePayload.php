@@ -2,7 +2,7 @@
   $key = 'your_public_key';
   $secert = 'your_secret_key';
   $returnData = '[{"your_field_1": "field 1 value","your_field_2": "field 2 value"}]';
-  $compressed = gzcompress(utf8_encode([$returnData]));
+  $compressed = gzcompress(utf8_encode($returnData));
   $secert = hex2bin($secert);
   $sign = hash_hmac('sha256', $compressed, $secert, true);
   $sign = utf8_decode(bin2hex($sign));
